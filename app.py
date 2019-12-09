@@ -78,29 +78,58 @@ def main():
             poopm(flask.request.form.get('Маркер_эстроген')),
             poopm(flask.request.form.get('Маркер_прогестерон')),
             poopm(flask.request.form.get('Маркер_индекс')),
-            poopm(flask.request.form.get('Маркер_HER2')),
+            #poopm(flask.request.form.get('Маркер_HER2')),
         ]
 
         req = [n, go] + gos + [gk] + gks + s + m
 
         print(n, go, gos, gk, gks, s, m)
         print(req)
-        return flask.render_template('main.html', result="req")
 
-        #Education = flask.request.form['Education']
-        #Sex = flask.request.form['Sex']
-        #Age = flask.request.form['Age']
-        #Activity = flask.request.form['Activity']
-        #Sport = flask.request.form['Sport']
-        #IsAlone = flask.request.form['IsAlone']
-        #AgeEducation = flask.request.form['AgeEducation']
-        #input_variables = pd.DataFrame([[Education,Sex,Age,Activity,Sport,IsAlone,AgeEducation]],
-         #                              columns=['Education','Sex','Age','Activity','Sport','IsAlone','Age*Education'],
-        #                               dtype=int64)
-        #prediction = model.predict(input_variables)[0]
-        #return flask.render_template('main.html',
-        #                             original_input={'Education':Education,'Sex':Sex,'Age':Age,'Activity':Activity,'Sport':Sport,'IsAlone':IsAlone,'Age*Education':AgeEducation},
-         #                            result=prediction,
-         #                            )
+        input_variables = pd.DataFrame([req], columns=[
+            'НаличиеОтдаленныхМетастазов',
+            'ГистологическийТипОпухоли',
+            'ГистологическийТипОпухолиЭпиталиальный',
+            'ГистологическийТипОпухолиАденокарцинома',
+            'ГистологическийТипОпухолиПочечноклеточный',
+            'ГистологическийТипОпухолиЭндометриоидный',
+            'ГистологическийТипОпухолиПаппилярный',
+            'ГистологическийТипОпухолиФолликулярный',
+            'ГистологическийТипОпухолиГюртклеточный',
+            'ГистологическийТипОпухолиМедуллярный',
+            'ГистологическийТипОпухолиАнапластический',
+            'ГистологическийТипОпухолиНеэпиталиальный',
+            'ГистологическийТипОпухолиНепочечноклеточный',
+            'ГистологическийТипОпухолиНеэндометриоидный',
+            'ГистологическийТипОпухолиНеаденокарцинома',
+            'ГистологическийТипКлеток',
+            'ГистологическийТипКлетокСветлоклеточный',
+            'ГистологическийТипКлетокНесветлоклеточный',
+            'ГистологическийТипКлетокМелкоклеточный',
+            'ГистологическийТипКлетокНемелкоклеточный',
+            'ГистологическийТипКлетокБазальноклеточный',
+            'ГистологическийТипКлетокНебазальноклеточный',
+            'ГистологическийТипКлетокПлоскоклеточный',
+            'ГистологическийТипКлетокНеплоскоклеточный',
+            'СтепеньДиффТканиОпухоли',
+            'СтепеньДиффТканиОпухолиНизко',
+            'СтепеньДиффТканиОпухолиУмеренно',
+            'СтепеньДиффТканиОпухолиВысоко',
+            'СтепеньДиффТканиОпухолиНеОпред',
+            'Маркер_cKit',
+            'Маркер_RAS',
+            'Маркер_EGFR',
+            'Маркер_ALK',
+            'Маркер_PD_L1',
+            'Маркер_BRAF',
+            'Маркер_эстроген',
+            'Маркер_прогестерон',
+            'Маркер_индекс',
+            #'Маркер_HER2',
+        ], dtype=int64)
+        prediction = model.predict(input_variables)[0]
+        print('prediction', prediction)
+        return flask.render_template('main.html', result=prediction)
+
 if __name__ == '__main__':
     app.run(host='localhost', port=port, debug=True)
