@@ -3,6 +3,11 @@
 <head>
 	<title>OpenClassifier</title>
 	<style>
+		body {
+			font-family: "Ubuntu", "Trebuchet MS", sans-serif;
+			font-size: 20px;
+			font-weight: lighter;
+		}
 		.result {
 			margin: auto;
 			width: 35%;
@@ -21,19 +26,36 @@
 		.form__field {
 			display: flex;
 			justify-content: space-between;
+			min-height: 46px;
+		}
+
+		.form__label {
+			margin-right: 10px;
+			line-height: 36px;
 		}
 
 		.form__fieldset {
-			padding-right: 0;
+			padding-right: 9px;
 			padding-bottom: 0;
 			margin-bottom: 10px;
+
+			border: 2px solid #0088cc;
+			-moz-border-radius: 8px;
+			-webkit-border-radius: 8px;
+			border-radius: 8px;
+		}
+
+		.form__fieldset__legend {
+			font-size: 24px;
 		}
 
 		.form__input__select {
 			width: 170px;
+			margin-right: 10px;
 		}
 
 		.switch {
+			font-weight: normal;
 			position: relative;
 			display: block;
 			vertical-align: top;
@@ -47,6 +69,15 @@
 			box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
 			cursor: pointer;
 		}
+
+		.form__fieldset .switch {
+			margin-right: 0;
+		}
+
+		.form__fieldset .form__input__select {
+			margin-right: 0;
+		}
+
 
 		.switch-input {
 			position: absolute;
@@ -163,32 +194,12 @@
 <body>
 	<form class="form">
 		<div class="form__column">
-			<div class="form__field">
-				<div class="form__label">Наличие отдаленных метастазов</div>
-				<div class="form__input">
-					<input class="switch-input" type="checkbox" id="НаличиеОтдаленныхМетастазов" name="НаличиеОтдаленныхМетастазов" value="false">
-					<label class="switch" for="НаличиеОтдаленныхМетастазов">
-						<span class="switch-label" data-on="Да" data-off="Нет"></span>
-						<span class="switch-handle"></span>
-					</label>
-				</div>
-			</div>
-			<div class="form__field">
-				<div class="form__label">Гистологический тип опухоли</div>
-				<div class="form__input">
-					<input class="switch-input" type="checkbox" id="ГистологическийТипОпухоли" name="ГистологическийТипОпухоли" value="false">
-					<label class="switch" for="ГистологическийТипОпухоли">
-						<span class="switch-label" data-on="Да" data-off="Нет"></span>
-						<span class="switch-handle"></span>
-					</label>
-				</div>
-			</div>
 			<fieldset class="form__fieldset">
-				<legend class="form__fieldset__legend">
-					Гистологический тип опухоли
-				</legend>
+				<legend class="form__fieldset__legend">Гистологический тип опухоли</legend>
 				<div class="form__field">
-					<div class="form__label">Эпиталиальный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиЭпиталиальный">Эпиталиальный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиЭпиталиальный" name="ГистологическийТипОпухолиЭпиталиальный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиЭпиталиальный">
@@ -198,7 +209,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Аденокарцинома</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиАденокарцинома">Аденокарцинома</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиАденокарцинома" name="ГистологическийТипОпухолиАденокарцинома" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиАденокарцинома">
@@ -208,7 +221,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Почечноклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиПочечноклеточный">Почечноклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиПочечноклеточный" name="ГистологическийТипОпухолиПочечноклеточный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиПочечноклеточный">
@@ -218,7 +233,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Эндометриоидный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиЭндометриоидный">Эндометриоидный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиЭндометриоидный" name="ГистологическийТипОпухолиЭндометриоидный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиЭндометриоидный">
@@ -228,7 +245,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Паппилярный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиПаппилярный">Паппилярный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиПаппилярный" name="ГистологическийТипОпухолиПаппилярный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиПаппилярный">
@@ -238,7 +257,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Фолликулярный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиФолликулярный">Фолликулярный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиФолликулярный" name="ГистологическийТипОпухолиФолликулярный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиФолликулярный">
@@ -248,7 +269,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Гюртклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиГюртклеточный">Гюртклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиГюртклеточный" name="ГистологическийТипОпухолиГюртклеточный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиГюртклеточный">
@@ -258,7 +281,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Медуллярный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиМедуллярный">Медуллярный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиМедуллярный" name="ГистологическийТипОпухолиМедуллярный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиМедуллярный">
@@ -268,7 +293,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Анапластический</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиАнапластический">Анапластический</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиАнапластический" name="ГистологическийТипОпухолиАнапластический" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиАнапластический">
@@ -278,7 +305,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Неэпиталиальный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиНеэпиталиальный">Неэпиталиальный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиНеэпиталиальный" name="ГистологическийТипОпухолиНеэпиталиальный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиНеэпиталиальный">
@@ -288,7 +317,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Непочечноклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиНепочечноклеточный">Непочечноклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиНепочечноклеточный" name="ГистологическийТипОпухолиНепочечноклеточный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиНепочечноклеточный">
@@ -298,7 +329,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Неэндометриоидный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиНеэндометриоидный">Неэндометриоидный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиНеэндометриоидный" name="ГистологическийТипОпухолиНеэндометриоидный" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиНеэндометриоидный">
@@ -308,7 +341,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Неаденокарцинома</div>
+					<div class="form__label">
+						<label for="ГистологическийТипОпухолиНеаденокарцинома">Неаденокарцинома</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипОпухолиНеаденокарцинома" name="ГистологическийТипОпухолиНеаденокарцинома" value="false">
 						<label class="switch" for="ГистологическийТипОпухолиНеаденокарцинома">
@@ -320,19 +355,12 @@
 			</fieldset>
 		</div>
 		<div class="form__column">
-			<div class="form__field">
-				<div class="form__label">Гистологический тип клеток</div>
-				<div class="form__input">
-					<input class="switch-input" type="checkbox" id="ГистологическийТипКлеток" name="ГистологическийТипКлеток" value="false">
-					<label class="switch" for="ГистологическийТипКлеток">
-						<span class="switch-label" data-on="Да" data-off="Нет"></span>
-						<span class="switch-handle"></span>
-					</label>
-				</div>
-			</div>
 			<fieldset class="form__fieldset">
+				<legend class="form__fieldset__legend">Гистологический тип клеток</legend>
 				<div class="form__field">
-					<div class="form__label">Светлоклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокСветлоклеточный">Светлоклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокСветлоклеточный" name="ГистологическийТипКлетокСветлоклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокСветлоклеточный">
@@ -342,7 +370,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Несветлоклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокНесветлоклеточный">Несветлоклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокНесветлоклеточный" name="ГистологическийТипКлетокНесветлоклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокНесветлоклеточный">
@@ -352,7 +382,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Мелкоклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокМелкоклеточный">Мелкоклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокМелкоклеточный" name="ГистологическийТипКлетокМелкоклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокМелкоклеточный">
@@ -362,7 +394,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Немелкоклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокНемелкоклеточный">Немелкоклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокНемелкоклеточный" name="ГистологическийТипКлетокНемелкоклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокНемелкоклеточный">
@@ -372,7 +406,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Базальноклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокБазальноклеточный">Базальноклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокБазальноклеточный" name="ГистологическийТипКлетокБазальноклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокБазальноклеточный">
@@ -382,7 +418,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Небазальноклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокНебазальноклеточный">Небазальноклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокНебазальноклеточный" name="ГистологическийТипКлетокНебазальноклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокНебазальноклеточный">
@@ -392,7 +430,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Плоскоклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокПлоскоклеточный">Плоскоклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокПлоскоклеточный" name="ГистологическийТипКлетокПлоскоклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокПлоскоклеточный">
@@ -402,7 +442,9 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">Неплоскоклеточный</div>
+					<div class="form__label">
+						<label for="ГистологическийТипКлетокНеплоскоклеточный">Неплоскоклеточный</label>
+					</div>
 					<div class="form__input">
 						<input class="switch-input" type="checkbox" id="ГистологическийТипКлетокНеплоскоклеточный" name="ГистологическийТипКлетокНеплоскоклеточный" value="false">
 						<label class="switch" for="ГистологическийТипКлетокНеплоскоклеточный">
@@ -415,65 +457,38 @@
 		</div>
 		<div class="form__column">
 			<div class="form__field">
-				<div class="form__label">Степень дифф ткани опухоли</div>
+				<div class="form__label">Наличие отдаленных метастазов</div>
 				<div class="form__input">
-					<input class="switch-input" type="checkbox" id="СтепеньДиффТканиОпухоли" name="СтепеньДиффТканиОпухоли" value="false">
-					<label class="switch" for="СтепеньДиффТканиОпухоли">
+					<input class="switch-input" type="checkbox" id="НаличиеОтдаленныхМетастазов" name="НаличиеОтдаленныхМетастазов" value="false">
+					<label class="switch" for="НаличиеОтдаленныхМетастазов">
 						<span class="switch-label" data-on="Да" data-off="Нет"></span>
 						<span class="switch-handle"></span>
 					</label>
 				</div>
 			</div>
-			<fieldset class="form__fieldset">
-				<legend>Степень дифф ткани опухоли</legend>
-				<div class="form__field">
-					<div class="form__label">Низко</div>
-					<div class="form__input">
-						<input class="switch-input" type="checkbox" id="СтепеньДиффТканиОпухолиНизко" name="СтепеньДиффТканиОпухолиНизко" value="false">
-						<label class="switch" for="СтепеньДиффТканиОпухолиНизко">
-							<span class="switch-label" data-on="Да" data-off="Нет"></span>
-							<span class="switch-handle"></span>
-						</label>
-					</div>
+			<div class="form__field">
+				<div class="form__label">
+					<label for="СтепеньДиффТканиОпухоли">Степень дифф ткани опухоли</label>
 				</div>
-				<div class="form__field">
-					<div class="form__label">Умеренно</div>
-					<div class="form__input">
-						<input class="switch-input" type="checkbox" id="СтепеньДиффТканиОпухолиУмеренно" name="СтепеньДиффТканиОпухолиУмеренно" value="false">
-						<label class="switch" for="СтепеньДиффТканиОпухолиУмеренно">
-							<span class="switch-label" data-on="Да" data-off="Нет"></span>
-							<span class="switch-handle"></span>
-						</label>
-					</div>
+				<div class="form__input">
+					<select class="form__input__select" id="СтепеньДиффТканиОпухоли">
+						<option class="form__input__select__option"></option>
+						<option class="form__input__select__option">низко</option>
+						<option class="form__input__select__option">умеренно</option>
+						<option class="form__input__select__option">высоко</option>
+						<option class="form__input__select__option">неопределено</option>
+					</select>
 				</div>
-				<div class="form__field">
-					<div class="form__label">Высоко</div>
-					<div class="form__input">
-						<input class="switch-input" type="checkbox" id="СтепеньДиффТканиОпухолиВысоко" name="СтепеньДиффТканиОпухолиВысоко" value="false">
-						<label class="switch" for="СтепеньДиффТканиОпухолиВысоко">
-							<span class="switch-label" data-on="Да" data-off="Нет"></span>
-							<span class="switch-handle"></span>
-						</label>
-					</div>
-				</div>
-				<div class="form__field">
-					<div class="form__label">Неопределено</div>
-					<div class="form__input">
-						<input class="switch-input" type="checkbox" id="СтепеньДиффТканиОпухолиНеОпред" name="СтепеньДиффТканиОпухолиНеОпред" value="false">
-						<label class="switch" for="СтепеньДиффТканиОпухолиНеОпред">
-							<span class="switch-label" data-on="Да" data-off="Нет"></span>
-							<span class="switch-handle"></span>
-						</label>
-					</div>
-				</div>
-			</fieldset>
+			</div>
 
 			<fieldset class="form__fieldset">
-				<legend>Маркеры</legend>
+				<legend class="form__fieldset__legend">Маркеры</legend>
 				<div class="form__field">
-					<div class="form__label">cKit</div>
+					<div class="form__label">
+						<label for="Маркер_cKit">cKit</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_cKit">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">нет</option>
 							<option class="form__input__select__option">да</option>
@@ -481,9 +496,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">RAS</div>
+					<div class="form__label">
+						<label for="Маркер_RAS">RAS</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_RAS">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">нет</option>
 							<option class="form__input__select__option">да</option>
@@ -491,9 +508,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">EGFR</div>
+					<div class="form__label">
+						<label for="Маркер_EGFR">EGFR</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_EGFR">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">нет</option>
 							<option class="form__input__select__option">да</option>
@@ -501,9 +520,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">ALK</div>
+					<div class="form__label">
+						<label for="Маркер_ALK">ALK</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_ALK">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">нет</option>
 							<option class="form__input__select__option">да</option>
@@ -511,9 +532,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">PD_L1</div>
+					<div class="form__label">
+						<label for="Маркер_PD_L1">PD_L1</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_PD_L1">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">неповышен</option>
 							<option class="form__input__select__option">повышен</option>
@@ -521,9 +544,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">BRAF</div>
+					<div class="form__label">
+						<label for="Маркер_BRAF">BRAF</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_BRAF">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">нет</option>
 							<option class="form__input__select__option">да</option>
@@ -531,9 +556,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">эстроген</div>
+					<div class="form__label">
+						<label for="Маркер_эстроген">эстроген</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_эстроген">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">нет</option>
 							<option class="form__input__select__option">да</option>
@@ -541,9 +568,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">прогестерон</div>
+					<div class="form__label">
+						<label for="Маркер_прогестерон">прогестерон</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_прогестерон">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">нет</option>
 							<option class="form__input__select__option">да</option>
@@ -551,9 +580,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">индекс</div>
+					<div class="form__label">
+						<label for="Маркер_индекс">индекс</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_индекс">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">низкий</option>
 							<option class="form__input__select__option">высокий</option>
@@ -561,9 +592,11 @@
 					</div>
 				</div>
 				<div class="form__field">
-					<div class="form__label">HER2</div>
+					<div class="form__label">
+						<label for="Маркер_HER2">HER2</label>
+					</div>
 					<div class="form__input">
-						<select class="form__input__select">
+						<select class="form__input__select" id="Маркер_HER2">
 							<option class="form__input__select__option">неопределено</option>
 							<option class="form__input__select__option">отсутствие</option>
 							<option class="form__input__select__option">гиперэкспрессия</option>
@@ -577,41 +610,6 @@
 		</div>
 	</form>
 </body>
-
-<form action="{{ url_for('main') }}" method="POST">
-	<fieldset>
-		<legend>Input values:</legend>
-		Education:
-		<input name="Education" type="number" required>
-		<br>
-		<br>
-		Sex:
-		<input name="Sex" type="number" required>
-		<br>
-		<br>
-		Age:
-		<input name="Age" type="number" required>
-		<br>
-		<br>
-		Activity:
-		<input name="Activity" type="number" required>
-		<br>
-		<br>
-		Sport:
-		<input name="Sport" type="number" required>
-		<br>
-		<br>
-		IsAlone:
-		<input name="IsAlone" type="number" required>
-		<br>
-		<br>
-		Age*Education:
-		<input name="AgeEducation" type="number" required>
-		<br>
-		<br>
-
-	</fieldset>
-</form>
 <br>
 <div class="result" align="center">
 	{% if original_input %}
