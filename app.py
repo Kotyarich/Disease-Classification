@@ -87,9 +87,10 @@ def main():
         print(n, go, gos, gk, gks, s, m)
         print(req)
 
-        prediction = model.predict(np.array(req).reshape(1, -1))
+        prediction = model.predict(np.array(req).reshape(1, -1))[0]
         print('prediction', prediction)
-        return flask.render_template('main.html', result=prediction)
+        return flask.render_template('main.html', result="Тест " + ("отрицательный", "положительный")[prediction])
+
 
 if __name__ == '__main__':
     app.run(host='localhost', port=port, debug=True)

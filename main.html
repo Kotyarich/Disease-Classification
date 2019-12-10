@@ -562,25 +562,19 @@
 						</div>
 					</div>
 				</fieldset>
-
 			</div>
 		</div>
 		<div class="form__layout">
 			<div class="form__column">
-				<input type="submit">
+				<input type="submit" value="Отправить">
 			</div>
 		</div>
 	</form>
 </body>
 <br>
 <div class="result" align="center">
-	{% if original_input %}
-	{% for variable, value in original_input.items() %}
-	<b>{{ variable }}</b> : {{ value }}
-	{% endfor %}
-	<br>
-	<br> Predicted Longevity is:
-	<p style="font-size:50px">{{ result }}</p>
+	{% if result %}
+	<p>{{ result }}</p>
 	{% endif %}
 </div>
 </html>
