@@ -4,7 +4,7 @@ from sklearn.impute import SimpleImputer, MissingIndicator
 from sklearn.pipeline import FeatureUnion, make_pipeline
 
 import parser
-
+import pickle
 
 def get_test_and_teach_datas(data, labels):
     data_sets = []
@@ -62,6 +62,9 @@ def cross_validation(data, labels, max_depth, max_features, min_samples_leaf, od
         clf = teach_tree(np.array(data_sets[0][i]), np.array(data_sets[1][i]),
                          max_depth, max_features, min_samples_leaf)
         acc += get_accurance(clf, np.array(test_sets[0][i] + od), np.array(test_sets[1][i] + ol))
+        file = open("model.skl",'wb')
+        pickle.dump(clf, file)
+        file.close()
     acc = acc / 5 * 100
     print('{:.2f}: {}, {}, {}'.format(acc, max_depth, max_features, min_samples_leaf))
     return acc
